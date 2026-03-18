@@ -1,10 +1,10 @@
 ---
 title: "Zenoh 1.8.x: Kiyohime"
-date: 2026-03-17
+date: 2026-03-18
 menu: "blog"
 weight: 20260317
-description: "17th March, 2026 -- Paris."
-draft: true
+description: "18th March, 2026 -- Paris."
+draft: false
 ---
 
 Sometimes it's the details that make the difference.
