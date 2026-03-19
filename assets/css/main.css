@@ -39,8 +39,9 @@ html {
 }
 
 .dark #search, .dark #global-search {
+  --pagefind-ui-primary: #4d7fff;
   --pagefind-ui-text: #d1d5db;
-  --pagefind-ui-background: #1f2937;
+  --pagefind-ui-background: #111827;
   --pagefind-ui-border: #374151;
   --pagefind-ui-tag: #374151;
 }

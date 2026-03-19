@@ -40,6 +40,29 @@
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
     {{/* ══════════════════════════════════════════
+         The Zenoh Report
+         ══════════════════════════════════════════ */}}
+    <section>
+      <div class="flex items-center gap-5 p-6 bg-gradient-to-r from-zenoh-navy/5 to-zenoh-blue/5 dark:from-zenoh-navy/40 dark:to-blue-950/40 border border-zenoh-blue/20 dark:border-zenoh-blue/30 rounded-2xl">
+        <span class="text-4xl flex-shrink-0" aria-hidden="true">📰</span>
+        <div class="flex-1 min-w-0">
+          <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-1">The Zenoh Report</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            Monthly newsletter written by <strong>Angelo Corsaro</strong>, Lead of Eclipse Zenoh —
+            release deep-dives, technology spotlights, community projects, and deployment tips.
+          </p>
+        </div>
+        <a href="https://corsaro.me/en/zenoh/report/"
+           class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-zenoh-blue hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm">
+          Read Issues
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    {{/* ══════════════════════════════════════════
          Featured Playlists
          ══════════════════════════════════════════ */}}
     <section>
@@ -512,29 +535,6 @@
           </svg>
           <span id="more-papers-label">Show 12 more papers</span>
         </button>
-      </div>
-    </section>
-
-    {{/* ══════════════════════════════════════════
-         The Zenoh Report promo banner
-         ══════════════════════════════════════════ */}}
-    <section>
-      <div class="flex items-center gap-5 p-6 bg-gradient-to-r from-zenoh-navy/5 to-zenoh-blue/5 dark:from-zenoh-navy/40 dark:to-blue-950/40 border border-zenoh-blue/20 dark:border-zenoh-blue/30 rounded-2xl">
-        <span class="text-4xl flex-shrink-0" aria-hidden="true">📰</span>
-        <div class="flex-1 min-w-0">
-          <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-1">The Zenoh Report</h2>
-          <p class="text-sm text-gray-600 dark:text-gray-300">
-            Monthly newsletter written by <strong>Angelo Corsaro</strong>, Lead of Eclipse Zenoh —
-            release deep-dives, technology spotlights, community projects, and deployment tips.
-          </p>
-        </div>
-        <a href="{{ relURL "/zenoh-report/" }}"
-           class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-zenoh-blue hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm">
-          Read Issues
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
-        </a>
       </div>
     </section>
 

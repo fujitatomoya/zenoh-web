@@ -25,11 +25,27 @@ module.exports = {
           css: {
             'code::before': { content: '""' },
             'code::after': { content: '""' },
+            // Inline code styling
             'code': {
               backgroundColor: theme('colors.gray.100'),
               borderRadius: theme('borderRadius.sm'),
               padding: '0.1em 0.3em',
               fontWeight: '400',
+            },
+            // Reset pre so Chroma CSS handles all code block styling
+            'pre': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+              padding: '0',
+              borderRadius: '0',
+            },
+            // Reset code-inside-pre so Chroma token classes control colors
+            'pre code': {
+              backgroundColor: 'transparent',
+              padding: '0',
+              borderRadius: '0',
+              fontWeight: 'inherit',
+              color: 'inherit',
             },
           },
         },
@@ -37,6 +53,13 @@ module.exports = {
           css: {
             'code': {
               backgroundColor: theme('colors.gray.800'),
+            },
+            'pre': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
             },
           },
         },

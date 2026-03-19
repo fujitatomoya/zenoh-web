@@ -99,8 +99,6 @@
         {{ $adopters := index (.Site.Menus.adopters) 0 }}
         {{ $isMedias := hasPrefix .RelPermalink "/media" }}
         {{ $medias := index (.Site.Menus.medias) 0 }}
-        {{ $isReport := hasPrefix .RelPermalink "/zenoh-report" }}
-        {{ $report := index (.Site.Menus.zenohreport) 0 }}
         {{ $isBlog := hasPrefix .RelPermalink "/blog" }}
         {{ $blog := index (sort .Site.Menus.blog "Weight" "desc") 0 }}
         <a href="/"
@@ -115,10 +113,6 @@
            class="inline-flex items-center h-full px-3 text-sm font-medium border-b-2 transition-colors {{ if $isAdopters }}border-white text-white{{ else }}border-transparent text-gray-300 hover:text-white hover:border-white/40{{ end }}">Adopters</a>
         <a href="{{ $medias.URL }}"
            class="inline-flex items-center h-full px-3 text-sm font-medium border-b-2 transition-colors {{ if $isMedias }}border-white text-white{{ else }}border-transparent text-gray-300 hover:text-white hover:border-white/40{{ end }}">Media</a>
-        {{ if $report }}
-        <a href="{{ $report.URL }}"
-           class="inline-flex items-center h-full px-3 text-sm font-medium border-b-2 transition-colors {{ if $isReport }}border-white text-white{{ else }}border-transparent text-gray-300 hover:text-white hover:border-white/40{{ end }}">Report</a>
-        {{ end }}
         <a href="/blog/"
            class="inline-flex items-center h-full px-3 text-sm font-medium border-b-2 transition-colors {{ if $isBlog }}border-white text-white{{ else }}border-transparent text-gray-300 hover:text-white hover:border-white/40{{ end }}">Blog</a>
       </nav>
@@ -134,8 +128,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
             </svg>
           </button>
-          <div id="search-dropdown" class="hidden absolute right-0 top-full mt-2 w-80 bg-[#0d1a4a] dark:bg-gray-900 rounded-xl shadow-2xl border border-white/10 p-3 z-50">
-            <div id="global-search"></div>
+          <div id="search-dropdown" class="hidden absolute right-0 top-full mt-2 w-[28rem] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50">
+            <div id="global-search" class="p-3 max-h-[80vh] overflow-y-auto"></div>
           </div>
         </div>
 
@@ -192,8 +186,6 @@
         {{ $adopters2 := index (.Site.Menus.adopters) 0 }}
         {{ $isMedias2 := hasPrefix .RelPermalink "/media" }}
         {{ $medias2 := index (.Site.Menus.medias) 0 }}
-        {{ $isReport2 := hasPrefix .RelPermalink "/zenoh-report" }}
-        {{ $report2 := index (.Site.Menus.zenohreport) 0 }}
         {{ $isBlog2 := hasPrefix .RelPermalink "/blog" }}
         {{ $blog2 := index (sort .Site.Menus.blog "Weight" "desc") 0 }}
         <a href="/" class="px-3 py-2 border-l-2 text-sm font-medium {{ if .IsHome }}border-white text-white{{ else }}border-transparent text-gray-300{{ end }}">Home</a>
@@ -202,9 +194,6 @@
         <a href="/community/" class="px-3 py-2 border-l-2 text-sm font-medium {{ if $isCommunity2 }}border-white text-white{{ else }}border-transparent text-gray-300{{ end }}">Community</a>
         <a href="{{ $adopters2.URL }}" class="px-3 py-2 border-l-2 text-sm font-medium {{ if $isAdopters2 }}border-white text-white{{ else }}border-transparent text-gray-300{{ end }}">Adopters</a>
         <a href="{{ $medias2.URL }}" class="px-3 py-2 border-l-2 text-sm font-medium {{ if $isMedias2 }}border-white text-white{{ else }}border-transparent text-gray-300{{ end }}">Media</a>
-        {{ if $report2 }}
-        <a href="{{ $report2.URL }}" class="px-3 py-2 border-l-2 text-sm font-medium {{ if $isReport2 }}border-white text-white{{ else }}border-transparent text-gray-300{{ end }}">Report</a>
-        {{ end }}
         <a href="/blog/" class="px-3 py-2 border-l-2 text-sm font-medium {{ if $isBlog2 }}border-white text-white{{ else }}border-transparent text-gray-300{{ end }}">Blog</a>
       </nav>
       <!-- Mobile social icons -->
