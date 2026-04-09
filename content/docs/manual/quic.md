@@ -70,3 +70,29 @@ $ z_pub -c peer.json5 -l quic/localhost:7448 -e quic/localhost:7447
 ```
 
 As it can be noticed, the same *peer.json5* is used for *z_sub* and *z_pub*.
+
+---------
+## Multistream QUIC
+
+Starting with version 1.9.0, Zenoh supports **multistream QUIC** to optimize resource usage by leveraging QUIC's built-in multiplexing capabilities.
+
+This feature maps each Zenoh priority level to a dedicated QUIC stream, enabling efficient handling of high-priority messages without blocking lower-priority traffic:
+QUIC's stream multiplexing allows each Zenoh priority level to operate independently, preventing priority inversion by isolating high-priority traffic from lower-priority flows.
+
+### Configuration
+
+To enable multistream QUIC, add `#multistream=[auto/0/1]` to your listen/connect endpoint configuration.
+Example:
+
+```json
+{
+  "connect": {
+    "endpoints": ["quic/localhost:7447#multistream=1"]
+  },
+}
+```
+
+If not provided, the default config is set to `auto`, which allows the two connecting instances to negotiate the usage of multistream, and maintains compatibility with Zenoh versions that do not support it.
+
+Multistream QUIC is negotiated via QUIC ALPN (Application-Layer Protocol Negotiation).
+For more details on QUIC and its stream multiplexing, see the [QUIC Protocol Specification](https://datatracker.ietf.org/doc/rfc9000).
