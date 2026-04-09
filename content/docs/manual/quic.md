@@ -68,6 +68,29 @@ $ z_pub -c peer.json5 -l quic/localhost:7448 -e quic/localhost:7447
 As it can be noticed, the same *peer.json5* is used for *z_sub* and *z_pub*.
 
 ---------
+## Unreliable Datagrams
+
+As of Zenoh 1.5.0, it is possible to use unreliable datagrams in QUIC by setting `rel=0` in QUIC endpoints/locators.
+
+The QUIC links is marked as *best effort* to Zenoh, and sends all traffic over datagrams that are encapsulated within the QUIC transport's security guarantees.
+The initial MTU value is also configurable via endpoint configuration:
+
+```json
+{
+  "connect": {
+    "endpoints": ["quic/localhost:7447?rel=0#initial_mtu=1200"]
+  },
+}
+```
+
+By default, the initial MTU value is 1200 bytes. If network conditions allow for higher MTUs, manual configuration of `initial_mtu` is desirable.
+
+Note that QUIC streamed and datagram modes are not compatible: both the listener and connect endpoints need to use the same mode.
+To support both datagram and streamed communication over the same QUIC link, the **mixed reliability** feature must be enabled.
+
+See [RFC 9221](https://datatracker.ietf.org/doc/rfc9221/) for more information on QUIC's datagram mode.
+
+---------
 ## Stream Multiplexing
 
 Starting with version 1.9.0, Zenoh supports **multistream QUIC** to optimize resource usage by leveraging QUIC's built-in multiplexing capabilities.
@@ -77,7 +100,7 @@ QUIC's stream multiplexing allows each Zenoh priority level to operate independe
 
 ### Configuration
 
-Multistream QUIC is configured by adding `multistream=[auto/0/1]` to your listen/connect endpoint parameters.
+Multistream QUIC is configured by adding `multistream=[auto|0|1]` to the `listen`/`connect` endpoint parameters.
 
 Example:
 
