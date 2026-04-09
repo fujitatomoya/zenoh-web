@@ -11,11 +11,7 @@ Zenoh supports QUIC as a transport protocol.
 As you may already know, QUIC is a UDP-based, stream-multiplexing, encrypted transport protocol.
 It natively embeds TLS for encryption, authentication and confidentiality.
 
-As of today, the only supported TLS authentication mode in Zenoh is server-authentication [^mtls]: clients validate the server TLS certificate but not the other way around.
-That is, the same way of operating on the web where the web browsers validate the identity of the server via means of the TLS certificate.
-
-[^mtls]: Starting from [Zenoh 0.7.0-rc](https://github.com/eclipse-zenoh/zenoh/tree/0.7.0-rc),
-Zenoh [supports both TLS and mTLS (mutual TLS) as communication transports](https://zenoh.io/blog/2023-01-10-zenoh-charmander/#mutual-tls-authentication).
+Zenoh supports both TLS and mTLS over QUIC, and leverages advanced QUIC features such as **stream multiplexing**, **unreliable datagrams**, and **mixed reliability**.
 
 ---------
 ## TLS configuration
