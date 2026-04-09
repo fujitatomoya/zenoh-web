@@ -119,6 +119,50 @@ Multistream QUIC is negotiated via QUIC ALPN (Application-Layer Protocol Negotia
 For more details on QUIC and its stream multiplexing, see the [QUIC Protocol Specification](https://datatracker.ietf.org/doc/rfc9000).
 
 ---------
+## Mixed Reliability
+
+As of Zenoh 1.9.0, it is possible to use QUIC streamed mode and datagram mode over a single QUIC connection.
+
+When enabled, it allows Zenoh to selectively schedule reliable messages (marked via the reliability API as `Reliable`) over QUIC streams,
+and best-effort messages (marked as `BestEffort` in the API) over UDP datagrams via QUIC's datagram mode.
+
+
+### Configuration
+
+Mixed reliability is enabled by adding `mixed_rel=1` or `mixed_rel=auto` to the endpoint metadata:
+
+```json
+{
+  "connect": {
+    "endpoints": ["quic/localhost:7447?mixed_rel=1"]
+  },
+}
+```
+
+- **Default**: `0` (disabled) to maintain behavior of previous versions
+- **Auto**: Negotiates mixed reliability support via QUIC ALPN based on the peer's configuration
+- **1**: Explicitly enables mixed reliability, fails to connect if unsupported by peer
+
+### Behavior
+
+When enabled, mixed reliability creates two distinct Zenoh links over the same QUIC connection:
+- **Reliable link**: Handles `Reliability::Reliable` messages over QUIC streams
+- **Best-effort link**: Handles `Reliability::BestEffort` messages over QUIC datagrams
+
+The links operate independently but share the same connection - closing one link also closes the other to prevent message scheduling on a closed connection.
+Note that the independence of the links is merely an implementation detail: they count as a single link with regards to the configurable link limit.
+
+Finally, **mixed reliability** is compatible with other QUIC features. For example, **multistream QUIC** can be enabled on the same endpoint as follows:
+
+```json
+{
+  "connect": {
+    "endpoints": ["quic/localhost:7447?multistream=1;mixed_rel=1"]
+  },
+}
+```
+
+---------
 ## Unsecure QUIC
 
 Zenoh v1.9.0 introduces reliability over UDP via unsecure QUIC.
