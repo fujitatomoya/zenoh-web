@@ -96,7 +96,7 @@ See [RFC 9221](https://datatracker.ietf.org/doc/rfc9221/) for more information o
 Starting with version 1.9.0, Zenoh supports **multistream QUIC** to optimize resource usage by leveraging QUIC's built-in multiplexing capabilities.
 
 This feature maps each Zenoh priority level to a dedicated QUIC stream, enabling efficient handling of high-priority messages without blocking lower-priority traffic:
-QUIC's stream multiplexing allows each Zenoh priority level to operate independently, preventing priority inversion by isolating high-priority traffic from lower-priority flows.
+QUIC's stream multiplexing allows each Zenoh priority level to operate independently, preventing head-of-line blocking by isolating high-priority traffic from lower-priority flows.
 
 ### Configuration
 
