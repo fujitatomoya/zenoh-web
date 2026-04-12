@@ -20,10 +20,10 @@ RUN if id -u $uid ; then userdel `id -un $uid` ; fi
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
-        curl \
-        git \
-        ca-certificates \
-        locales && \
+    curl \
+    git \
+    ca-certificates \
+    locales && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Node.js (required for Tailwind CSS and Pagefind)
@@ -51,4 +51,4 @@ WORKDIR /src
 
 EXPOSE 1313
 
-CMD ["sh", "-c", "npm install && hugo server"]
+CMD ["sh", "-c", "npm install && hugo server --bind 0.0.0.0"]

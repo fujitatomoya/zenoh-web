@@ -59,6 +59,8 @@ docker build -f docker/Dockerfile --build-arg user=$(id -un) --build-arg uid=$(i
 docker run --rm -v $(pwd):/src -p 1313:1313 zenoh_web
 ```
 
+Then visit [http://localhost:1313](http://localhost:1313).
+
 ## Development
 
 ### Spell Check
