@@ -1,6 +1,6 @@
 # Eclipse zenoh's Website
 
-The website for the Eclipse zenoh project. Lives at [http://zenoh.io](https://zenoh.io).
+The website for the Eclipse zenoh project. Lives at [https://zenoh.io](https://zenoh.io).
 
 ## Getting Started
 
@@ -40,7 +40,7 @@ brew update && brew install hugo
 Then, get the website running locally:
 
 ```sh
-git clone https://github.com/atolab/zenoh-web
+git clone https://github.com/zenoh-rs/zenoh-web
 cd zenoh-web
 hugo server
 ```
