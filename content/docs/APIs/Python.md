@@ -8,5 +8,5 @@ menu:
 
 {{< rawhtml >}}
 The Python API documentation is available on 
-<a href="https://zenoh-python.readthedocs.io/" target="_blank">Read the Docs</a>.
+<a href="https://zenoh-python.readthedocs.io/" target="_blank" rel="noopener noreferrer">Read the Docs</a>.
 {{< /rawhtml >}}

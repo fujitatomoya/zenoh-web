@@ -15,13 +15,23 @@ Settings::: Resolution: Extra Large, Frame Rate 30 fps, Export with transparent 
 - [Query in Zenoh](#queries-in-zenoh)
 
 ## Pub/Sub in Zenoh
-![Zenoh pub/sub in action](/img/zenoh-pub-sub.gif "Zenoh pub/sub in action")
+{{< rawhtml >}}
+<video controls playsinline preload="metadata" width="1080" aria-label="Zenoh pub/sub in action">
+  <source src="/img/zenoh-pub-sub.mp4" type="video/mp4">
+  <a href="/img/zenoh-pub-sub.mp4">Zenoh pub/sub in action video</a>
+</video>
+{{< /rawhtml >}}
 
 This animation shows a basic pub/sub in action. The subscribers connected to the system receive the values sent by the publishers routed efficicently through the Zenoh network.
 You can also observe the presence of a sleeping subscriber connected to the network. Once the subscriber awakes, the nearest Zenoh node will send the pending publications.
 
 ## Queries in Zenoh
-![Zenoh queries in action](/img/zenoh-query.gif "Zenoh queries in action")
+{{< rawhtml >}}
+<video controls playsinline preload="metadata" width="1080" aria-label="Zenoh queries in action">
+  <source src="/img/zenoh-query.mp4" type="video/mp4">
+  <a href="/img/zenoh-query.mp4">Zenoh queries in action video</a>
+</video>
+{{< /rawhtml >}}
 
 This animation shows a simple query in action through Zenoh. You can see the presence of storages and queryables. 
 A queryable is any process that can reply to queries. A storage is a combination of a subscriber and a queryable.

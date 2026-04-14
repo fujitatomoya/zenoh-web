@@ -65,7 +65,7 @@ nav ul {
  * for light backgrounds (transparent bg with dark labels and lines).
  * In dark mode, wrap them in a white card so they display as intended.
  *
- * GIFs: topology_anim.gif, zenoh-pub-sub.gif, zenoh-query.gif
+ * GIFs: topology_anim.gif
  * PNGs: peer_to_peer, peers_mesh, routed_*, full_topology, etc.
  */
 .dark .prose img[src$=".gif"],

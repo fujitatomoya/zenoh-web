@@ -14,10 +14,24 @@
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}Eclipse Zenoh, unify data in motion, data at rest and computations.{{ end }}">
+  {{ $description := partial "seo_description.html" . }}
+  {{ $title := cond .IsHome .Site.Title (printf "%s · Zenoh" .Title) }}
+  {{ $image := index .Site.Params.images 0 | absURL }}
+  <meta name="description" content="{{ $description }}">
   <meta name="keywords" content="pub/sub, query, geo distributed storage, Rust, protocol, DDS, MQTT, Edge, IoT, MEC">
   <meta name="author" content="The Zenoh Team">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta property="og:type" content="{{ if eq .Section "blog" }}article{{ else }}website{{ end }}">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="Zenoh">
+  <meta property="og:image" content="{{ $image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ $title }}">
+  <meta name="twitter:description" content="{{ $description }}">
+  <meta name="twitter:image" content="{{ $image }}">
 
   <!-- Tailwind CSS (Hugo Pipe) -->
   {{ $css := resources.Get "css/main.css" | css.TailwindCSS | minify }}
@@ -33,7 +47,7 @@
   <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" />
 
   <title>
-    {{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · Zenoh{{ end }}
+    {{ $title }}
   </title>
 
   <!-- Dark mode flash prevention (must be synchronous, before first paint) -->
@@ -56,22 +70,7 @@
     gtag('config', 'G-PBD6MS51QL');
   </script>
 
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ .Site.BaseURL }}" },
-    "articleSection": "{{ .Section }}",
-    "name": "{{ .Title }}",
-    "headline": "{{ .Title }}",
-    "datePublished": "{{ .Date }}",
-    "dateModified": "{{ .Date }}",
-    "url": "{{ .Permalink }}",
-    "inLanguage": "en-US",
-    "description": "{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}"
-  }
-  </script>
+  {{ partial "seo_schema.html" . }}
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
@@ -83,7 +82,7 @@
 
       <!-- Logo -->
       <a class="flex items-center gap-2 flex-shrink-0" href="/">
-        <img src="/img/zenoh-dragon-light.png" class="h-9 w-auto" alt="Zenoh logo">
+        <img src="/img/zenoh-dragon-light.png" class="h-9 w-auto" alt="Zenoh logo" decoding="async">
         <span class="font-logo font-bold text-white text-xl tracking-wide">Zenoh</span>
       </a>
 
@@ -135,13 +134,13 @@
 
         <!-- Social icons (desktop only) -->
         <div class="hidden md:flex items-center gap-1">
-          <a class="p-2 text-gray-400 hover:text-white transition-colors rounded-md" href="https://github.com/eclipse-zenoh/zenoh" target="_blank" rel="noopener" aria-label="GitHub">
+          <a class="p-2 text-gray-400 hover:text-white transition-colors rounded-md" href="https://github.com/eclipse-zenoh/zenoh" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 499.36" focusable="false">
               <title>GitHub</title>
               <path d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z" fill="currentColor" fill-rule="evenodd"/>
             </svg>
           </a>
-          <a class="p-2 text-gray-400 hover:text-white transition-colors rounded-md" href="https://discord.gg/2GJ958VuHs" target="_blank" rel="noopener" aria-label="Discord">
+          <a class="p-2 text-gray-400 hover:text-white transition-colors rounded-md" href="https://discord.gg/2GJ958VuHs" target="_blank" rel="noopener noreferrer" aria-label="Discord">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" focusable="false">
               <title>Discord</title>
               <path fill="currentColor" d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
@@ -198,10 +197,10 @@
       </nav>
       <!-- Mobile social icons -->
       <div class="flex items-center gap-3 px-3 pt-4 border-t border-white/10 mt-2">
-        <a href="https://github.com/eclipse-zenoh/zenoh" target="_blank" rel="noopener" aria-label="GitHub" class="text-gray-400 hover:text-white transition-colors">
+        <a href="https://github.com/eclipse-zenoh/zenoh" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white transition-colors">
           <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 499.36"><path d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z" fill="currentColor" fill-rule="evenodd"/></svg>
         </a>
-        <a href="https://discord.gg/2GJ958VuHs" target="_blank" rel="noopener" aria-label="Discord" class="text-gray-400 hover:text-white transition-colors">
+        <a href="https://discord.gg/2GJ958VuHs" target="_blank" rel="noopener noreferrer" aria-label="Discord" class="text-gray-400 hover:text-white transition-colors">
           <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/></svg>
         </a>
       </div>

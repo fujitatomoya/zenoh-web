@@ -1,0 +1,15 @@
+{{- $description := "" -}}
+{{- with .Description -}}
+  {{- $description = . -}}
+{{- else -}}
+  {{- if .IsPage -}}
+    {{- $description = .Summary -}}
+  {{- else -}}
+    {{- with .Site.Params.description -}}
+      {{- $description = . -}}
+    {{- else -}}
+      {{- $description = "Eclipse Zenoh unifies data in motion, data at rest, and computations." -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $description | plainify | htmlUnescape | strings.TrimSpace | truncate 180 -}}

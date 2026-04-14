@@ -23,7 +23,7 @@
   .dark .carousel-btn:hover { background: #374151; }
 </style>
 
-<main class="flex-1 bg-gray-50 dark:bg-gray-900 min-h-screen">
+<main data-pagefind-body class="flex-1 bg-gray-50 dark:bg-gray-900 min-h-screen">
 
   {{/* ── Hero ── */}}
   <div class="bg-gradient-to-br from-zenoh-navy to-[#0d2060] text-white">
@@ -135,13 +135,14 @@
         }}
         {{ range $playlists }}
         <a href="https://www.youtube.com/playlist?list={{ .list }}"
-           target="_blank" rel="noopener"
+           target="_blank" rel="noopener noreferrer"
            class="playlist-card group">
           <div class="relative rounded-xl overflow-hidden bg-gray-900" style="aspect-ratio:16/9;">
             <img src="https://img.youtube.com/vi/{{ .thumb }}/hqdefault.jpg"
                  alt="{{ .title }}"
                  class="w-full h-full object-cover group-hover:opacity-70 transition-opacity duration-200"
-                 loading="lazy">
+                 loading="lazy"
+                 decoding="async">
             {{/* Playlist sidebar */}}
             <div class="absolute inset-y-0 right-0 w-16 flex flex-col items-center justify-center gap-1 text-white pointer-events-none group-hover:opacity-90 transition-opacity"
                  style="background: rgba(0,0,0,0.75);">
@@ -179,7 +180,7 @@
       {{/* ── Featured: main paper + report + slides ── */}}
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
 
-        <a href="https://ieeexplore.ieee.org/document/10456820/" target="_blank" rel="noopener"
+        <a href="https://ieeexplore.ieee.org/document/10456820/" target="_blank" rel="noopener noreferrer"
            class="group flex gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow no-underline">
           <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-5 h-5 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -195,7 +196,7 @@
           </div>
         </a>
 
-        <a href="https://discourse.openrobotics.org/uploads/short-url/o9ihvSjCwB8LkzRklpKdeesRTDi.pdf" target="_blank" rel="noopener"
+        <a href="https://discourse.openrobotics.org/uploads/short-url/o9ihvSjCwB8LkzRklpKdeesRTDi.pdf" target="_blank" rel="noopener noreferrer"
            class="group flex gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow no-underline">
           <div class="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -211,7 +212,7 @@
           </div>
         </a>
 
-        <a href="https://speakerdeck.com/kydos" target="_blank" rel="noopener"
+        <a href="https://speakerdeck.com/kydos" target="_blank" rel="noopener noreferrer"
            class="group flex gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow no-underline">
           <div class="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -245,7 +246,7 @@
 
         {{/* ── Always-visible: 6 most recent / impactful ── */}}
 
-        <a href="https://ieeexplore.ieee.org/document/11175385/" target="_blank" rel="noopener"
+        <a href="https://ieeexplore.ieee.org/document/11175385/" target="_blank" rel="noopener noreferrer"
            class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
           <div class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -261,7 +262,7 @@
           <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <a href="https://www.sciencedirect.com/science/article/pii/S1570870525000320" target="_blank" rel="noopener"
+        <a href="https://www.sciencedirect.com/science/article/pii/S1570870525000320" target="_blank" rel="noopener noreferrer"
            class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
           <div class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -277,7 +278,7 @@
           <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <a href="https://www.sciencedirect.com/science/article/pii/S0140366425000295" target="_blank" rel="noopener"
+        <a href="https://www.sciencedirect.com/science/article/pii/S0140366425000295" target="_blank" rel="noopener noreferrer"
            class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
           <div class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -293,7 +294,7 @@
           <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <a href="https://arxiv.org/abs/2505.02734" target="_blank" rel="noopener"
+        <a href="https://arxiv.org/abs/2505.02734" target="_blank" rel="noopener noreferrer"
            class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
           <div class="w-8 h-8 rounded-lg bg-orange-50 dark:bg-orange-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-4 h-4 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -309,7 +310,7 @@
           <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <a href="https://link.springer.com/article/10.1007/s10846-024-02211-2" target="_blank" rel="noopener"
+        <a href="https://link.springer.com/article/10.1007/s10846-024-02211-2" target="_blank" rel="noopener noreferrer"
            class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
           <div class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -325,7 +326,7 @@
           <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
 
-        <a href="https://zenodo.org/records/15297492" target="_blank" rel="noopener"
+        <a href="https://zenodo.org/records/15297492" target="_blank" rel="noopener noreferrer"
            class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
           <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -345,7 +346,7 @@
         {{/* ── Collapsible: remaining 12 papers ── */}}
         <div id="more-papers" class="hidden space-y-2.5">
 
-          <a href="https://link.springer.com/article/10.1007/s10846-024-02187-z" target="_blank" rel="noopener"
+          <a href="https://link.springer.com/article/10.1007/s10846-024-02187-z" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -361,7 +362,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://link.springer.com/article/10.1007/s12243-023-01009-x" target="_blank" rel="noopener"
+          <a href="https://link.springer.com/article/10.1007/s12243-023-01009-x" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -377,7 +378,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://arxiv.org/abs/2303.09419" target="_blank" rel="noopener"
+          <a href="https://arxiv.org/abs/2303.09419" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-orange-50 dark:bg-orange-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -393,7 +394,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://www.mdpi.com/2079-9292/12/18/3940" target="_blank" rel="noopener"
+          <a href="https://www.mdpi.com/2079-9292/12/18/3940" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -409,7 +410,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://dl.acm.org/doi/abs/10.1145/3603166.3632555" target="_blank" rel="noopener"
+          <a href="https://dl.acm.org/doi/abs/10.1145/3603166.3632555" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -425,7 +426,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://ieeexplore.ieee.org/document/10073502/" target="_blank" rel="noopener"
+          <a href="https://ieeexplore.ieee.org/document/10073502/" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -441,7 +442,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://ieeexplore.ieee.org/document/9974876/" target="_blank" rel="noopener"
+          <a href="https://ieeexplore.ieee.org/document/9974876/" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -457,7 +458,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://ieeexplore.ieee.org/document/9904790/" target="_blank" rel="noopener"
+          <a href="https://ieeexplore.ieee.org/document/9904790/" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -473,7 +474,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://dl.acm.org/doi/10.1145/3493425.3502761" target="_blank" rel="noopener"
+          <a href="https://dl.acm.org/doi/10.1145/3493425.3502761" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -489,7 +490,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://dl.acm.org/doi/10.1145/3469263.3469858" target="_blank" rel="noopener"
+          <a href="https://dl.acm.org/doi/10.1145/3469263.3469858" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -505,7 +506,7 @@
             <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-zenoh-blue transition-colors flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
 
-          <a href="https://ieeexplore.ieee.org/document/9742202/" target="_blank" rel="noopener"
+          <a href="https://ieeexplore.ieee.org/document/9742202/" target="_blank" rel="noopener noreferrer"
              class="group flex items-start gap-4 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow no-underline">
             <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center flex-shrink-0 mt-0.5">
               <svg class="w-4 h-4 text-zenoh-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
@@ -622,7 +623,7 @@
             "badge" "ZUM24") }}
       </div>
       <a href="https://www.youtube.com/playlist?list=PLZDEtJusUvAZxKtGHC-aIQB0bwExxt5fD"
-         target="_blank" rel="noopener"
+         target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-1.5 mt-4 text-sm text-zenoh-blue hover:underline font-medium">
         View full Robotics playlist
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -660,7 +661,7 @@
             "badge" "ZUM23") }}
       </div>
       <a href="https://www.youtube.com/playlist?list=PLZDEtJusUvAZ9WUXa79V4fdU0lxHfnbH_"
-         target="_blank" rel="noopener"
+         target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-1.5 mt-4 text-sm text-zenoh-blue hover:underline font-medium">
         View full Automotive playlist
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -707,14 +708,14 @@
       </div>
       <div class="flex gap-3 mt-4">
         <a href="https://www.youtube.com/playlist?list=PLZDEtJusUvAYq9543F3vQVOuahOAtNWuG"
-           target="_blank" rel="noopener"
+           target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-1.5 text-sm text-zenoh-blue hover:underline font-medium">
           ZUM 2024 playlist
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
         <span class="text-gray-300 dark:text-gray-600">·</span>
         <a href="https://www.youtube.com/playlist?list=PLZDEtJusUvAZ1ISiU0qAQ011m-wuDwNtC"
-           target="_blank" rel="noopener"
+           target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-1.5 text-sm text-zenoh-blue hover:underline font-medium">
           ZUM 2023 playlist
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
