@@ -40,11 +40,15 @@ always a child of a peer-to-peer network or a link-state network and a peer-to-p
 always a child of a link-state network. This scheme defines a bound relation between nodes. Routers
 are north-bound w.r.t. peers and clients; clients are south-bound w.r.t. peers and routers, etc.
 
+![Pre-regions](../../img/2026-04-16-zenoh-longwang/pre-regions.png)
+
 Post-regions Zenoh on the other hand does away with the traditional three-layer router/peer/client
 hierarchies. Instead, network topology hierarchies may now span an arbitrary number of layers. Zenoh
 1.9 however ships with a limitation on bound relations: routers may only sit south of other routers,
 which is enforced at establishment time (i.e., Zenoh's "handshake"). Beyond this constraint, you have
 complete freedom in designing your region tree architecture.
+
+![Post-regions](../../img/2026-04-16-zenoh-longwang/post-regions.png)
 
 A region may be seen as the set of nodes comprising a network topology. Each element of the tree of
 topologies is thus a region. Regions allow you more flexibility when designing your system's _region
