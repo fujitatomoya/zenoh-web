@@ -1,6 +1,6 @@
 # Eclipse zenoh's Website
 
-The website for the Eclipse zenoh project. Lives at [http://zenoh.io](https://zenoh.io).
+The website for the Eclipse zenoh project. Lives at [https://zenoh.io](https://zenoh.io).
 
 ## Getting Started
 
@@ -40,7 +40,7 @@ brew update && brew install hugo
 Then, get the website running locally:
 
 ```sh
-git clone https://github.com/atolab/zenoh-web
+git clone https://github.com/zenoh-rs/zenoh-web
 cd zenoh-web
 hugo server
 ```
@@ -58,6 +58,8 @@ docker build -f docker/Dockerfile --build-arg user=$(id -un) --build-arg uid=$(i
 # Run the development server
 docker run --rm -v $(pwd):/src -p 1313:1313 zenoh_web
 ```
+
+Then visit [http://localhost:1313](http://localhost:1313).
 
 ## Development
 

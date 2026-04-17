@@ -51,4 +51,4 @@ WORKDIR /src
 
 EXPOSE 1313
 
-CMD ["sh", "-c", "npm install && hugo server"]
+CMD ["sh", "-c", "npm install && exec hugo server --bind 0.0.0.0"]
