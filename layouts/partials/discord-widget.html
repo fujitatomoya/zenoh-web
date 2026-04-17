@@ -8,7 +8,7 @@
     Mode B (full iframe embed, community page):
       {{ partial "discord-widget" (dict "mode" "full") }}
 
-  IMPORTANT: Replace SERVER_ID and CHANNEL_ID below with real values once
+  Set params.widgetbot.server and params.widgetbot.channel in config.yaml once
   WidgetBot has been added to the Zenoh Discord server.
   See: https://widgetbot.io
   Canonical Discord invite: https://discord.gg/2GJ958VuHs
@@ -16,19 +16,21 @@
   To set up:
   1. Go to https://widgetbot.io and add WidgetBot to the server
   2. Enable a channel for embedding (e.g. #general or #help)
-  3. Replace SERVER_ID and CHANNEL_ID in this file with the actual IDs
+  3. Configure the actual IDs in site params
 */}}
 
-{{ if eq (.mode) "crate" }}
+{{ $server := site.Params.widgetbot.server }}
+{{ $channel := site.Params.widgetbot.channel }}
+{{ if and $server $channel (eq (.mode) "crate") }}
   {{/* Floating Discord chat bubble (appears on every page) */}}
   <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"
           async defer
-          data-server="SERVER_ID"
-          data-channel="CHANNEL_ID">
+          data-server="{{ $server }}"
+          data-channel="{{ $channel }}">
   </script>
-{{ else if eq (.mode) "full" }}
+{{ else if and $server $channel (eq (.mode) "full") }}
   {{/* Full embedded Discord chat (community page only) */}}
-  <iframe src="https://e.widgetbot.io/channels/SERVER_ID/CHANNEL_ID"
+  <iframe src="https://e.widgetbot.io/channels/{{ $server }}/{{ $channel }}"
           class="w-full h-96 rounded-xl border border-gray-200 dark:border-gray-700"
           allow="clipboard-write; fullscreen"
           title="Zenoh Discord Community Chat">

@@ -4,10 +4,3 @@
   The search input renders in dev mode but returns no results.
 */}}
 <div id="search" class="mb-4"></div>
-<script>
-  window.addEventListener('DOMContentLoaded', function() {
-    if (typeof PagefindUI !== 'undefined') {
-      new PagefindUI({ element: '#search', showSubResults: true, resetStyles: false });
-    }
-  });
-</script>

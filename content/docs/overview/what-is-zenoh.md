@@ -63,9 +63,15 @@ Angelo designed Zenoh around three core properties:
 
 Read the full origin story in [The Zenoh Report — February 2026](/zenoh-report/2026-02/).
 
-### Online References
-- [Zenoh: Unifying Communication, Storage and Computation from the Cloud to the Microcontroller](https://bit.ly/3P0DJ3N)
-- [Taming the Dragon Webinar Series](https://www.youtube.com/playlist?list=PLZDEtJusUvAY04pwmpY8uqCG5iQ7NgSrR)
-- [Zenoh: The Genesys](https://www.youtube.com/watch?v=BryexPfh0Jc&t=898s)
-- [Improving the Communication Layer of Robot Applications with ROS2 and Zenoh](https://www.youtube.com/watch?v=1NE8cU72frk)
-- [Zenoh and Edge Computing: A Perfect Marriage](https://www.youtube.com/watch?v=_NUP-ihrXjQ)
+### Further Reading
+- [Zenoh Protocol Specification](https://spec.zenoh.io) for the formal definition of the wire format, protocol behaviour, and semantics.
+- [Zenoh Book](https://corsaro.me/en/zenoh/book/) for a long-form guide to Zenoh architecture, concepts, and hands-on examples.
+- [Zenoh Papers](https://corsaro.me/en/zenoh/papers/) for research papers, external evaluations, and academic references.
+- [Zenoh for ROS 2](https://corsaro.me/en/zenoh/ros2/) for robotics-specific background and deployment considerations.
+- [Zenoh as a DDS Alternative](https://corsaro.me/en/zenoh/dds-alternative/) for a concise comparison of where Zenoh fits relative to DDS.
+- [The Zenoh Report](https://corsaro.me/en/zenoh/report/) for release notes, ecosystem highlights, and deployment-oriented writeups.
+- [Zenoh: Unifying Communication, Storage and Computation from the Cloud to the Microcontroller](https://bit.ly/3P0DJ3N) for the core IEEE paper.
+- [Taming the Dragon Webinar Series](https://www.youtube.com/playlist?list=PLZDEtJusUvAY04pwmpY8uqCG5iQ7NgSrR) for a guided video walkthrough.
+- [Zenoh: The Genesis](https://www.youtube.com/watch?v=BryexPfh0Jc&t=898s) for the design story behind Zenoh.
+- [Improving the Communication Layer of Robot Applications with ROS2 and Zenoh](https://www.youtube.com/watch?v=1NE8cU72frk) for a robotics-focused talk.
+- [Zenoh and Edge Computing: A Perfect Marriage](https://www.youtube.com/watch?v=_NUP-ihrXjQ) for an edge/cloud deployment talk.

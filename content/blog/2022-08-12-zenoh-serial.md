@@ -160,7 +160,12 @@ If you prefer to use a different pair of pins or to change the baud rate, you ca
 
 If everything goes well, you should have a similar output to the one below.
 
-![zenoh-serial-demo](../../img/blog-zenoh-serial/zenoh-serial-demo.gif)
+{{< rawhtml >}}
+<video controls playsinline preload="metadata" width="1024" aria-label="Zenoh serial transport demo">
+  <source src="../../img/blog-zenoh-serial/zenoh-serial-demo.mp4" type="video/mp4">
+  <a href="../../img/blog-zenoh-serial/zenoh-serial-demo.mp4">Zenoh serial demo video</a>
+</video>
+{{< /rawhtml >}}
 
 # Conclusion
 **Zenoh is the most flexible stack available for decentralized data management** capable of supporting not only serial but able to run across several layers of the OSI model.

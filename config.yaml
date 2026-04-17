@@ -1,8 +1,9 @@
 ---
-relativeURLs: "true"
+baseURL: "https://zenoh.io/"
+relativeURLs: false
 title: "Zenoh - The Zero Overhead, Pub/Sub, Store, Query, and Compute Protocol."
 languageCode: "en-us"
-canonifyURLs: "true"
+canonifyURLs: false
 markup:
   highlight:
     style: github
@@ -21,6 +22,11 @@ enableRobotsTXT: true
 enableEmoji: true
 singleViewStyle: "caspertwo"
 ignoreLogs: ['warning-goldmark-raw-html']
+
+params:
+  description: "Eclipse Zenoh unifies pub/sub, query, storage, and computation across cloud, edge, robotics, IoT, and constrained devices."
+  images:
+    - "/img/zenoh-dragon-light.png"
 
 sitemap:
     changefreq: "weekly"

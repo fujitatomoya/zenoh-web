@@ -7,7 +7,7 @@ description: "July 9th, 2025 -- Paris."
 draft: false
 ---
 
-As hinted at in our [previous blog](http://localhost:1313/blog/2025-04-09-zenoh-pico-performance/) post on Zenoh-Pico performance improvements, we’ve now introduced a long-requested peer-to-peer unicast mode for Zenoh-Pico! Let's dive into how it works.
+As hinted at in our [previous blog](/blog/2025-04-09-zenoh-pico-performance/) post on Zenoh-Pico performance improvements, we’ve now introduced a long-requested peer-to-peer unicast mode for Zenoh-Pico! Let's dive into how it works.
 
 ## What is Zenoh-Pico?
 

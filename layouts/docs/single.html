@@ -44,12 +44,12 @@
   </aside>
 
   <!-- Main content -->
-  <main class="flex-1 min-w-0">
+  <main data-pagefind-body class="flex-1 min-w-0">
     <div class="flex">
       <!-- Article -->
       <article class="flex-1 min-w-0 px-4 sm:px-8 py-8">
         <!-- Mobile sidebar toggle -->
-        <button id="docs-sidebar-toggle" type="button" aria-label="Toggle sidebar"
+        <button id="docs-sidebar-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="docs-sidebar-mobile"
                 class="md:hidden flex items-center gap-2 mb-6 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="20" height="20" focusable="false">
             <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h22M4 15h22M4 23h22"></path>
@@ -139,7 +139,9 @@
   var sidebarMobile = document.getElementById('docs-sidebar-mobile');
   if (sidebarToggle && sidebarMobile) {
     sidebarToggle.addEventListener('click', function() {
+      var expanded = sidebarToggle.getAttribute('aria-expanded') === 'true';
       sidebarMobile.classList.toggle('hidden');
+      sidebarToggle.setAttribute('aria-expanded', !expanded);
     });
   }
 </script>

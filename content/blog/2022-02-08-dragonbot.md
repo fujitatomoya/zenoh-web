@@ -18,7 +18,12 @@ Note that, although ROS2 is not used in this example, we still rely on ROS2 data
 
 Check out the final result!!!
 
-![dragonbotone-demo](../../img/blog-dragonbot/DragonBotOne.gif)
+{{< rawhtml >}}
+<video controls playsinline preload="metadata" width="640" aria-label="DragonBotOne demo">
+  <source src="../../img/blog-dragonbot/DragonBotOne.mp4" type="video/mp4">
+  <a href="../../img/blog-dragonbot/DragonBotOne.mp4">DragonBotOne demo video</a>
+</video>
+{{< /rawhtml >}}
 
 The remainder of this blog will take you through the journey towards the hatching of our DragonBotOne egg.
 

@@ -1,5 +1,7 @@
 {{ partial "header" . }}
 
+<main data-pagefind-body>
+
 <!-- Hero Section -->
 <section
     class="relative overflow-hidden bg-gradient-to-br from-zenoh-navy to-[#0d2060] dark:from-gray-950 dark:to-gray-900"
@@ -141,7 +143,7 @@
                     <a
                         href="https://github.com/eclipse-zenoh/zenoh"
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                         class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-white/25 text-white font-semibold text-sm hover:bg-white/10 active:bg-white/20 transition-colors"
                     >
                         <svg
@@ -166,6 +168,8 @@
                     class="w-52 md:w-64 lg:w-80 xl:w-88 drop-shadow-2xl"
                     src="/img/zenoh-dragon-light.png"
                     alt="Zenoh dragon mascot"
+                    fetchpriority="high"
+                    decoding="async"
                 />
             </div>
         </div>
@@ -378,5 +382,7 @@
         </div>
     </div>
 </section>
+
+</main>
 
 {{ partial "footer" . }}

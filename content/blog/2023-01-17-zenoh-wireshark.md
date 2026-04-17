@@ -41,7 +41,12 @@ By default, the Zenoh protocol dissector will automatically decode Zenoh packets
 ## Main Window View
 Below is presented Wireshark live capturing packets while running some of the Zenoh examples.
 
-![Live Capture](../../img/20230117-blog-zenoh-wireshark/live-capture.gif)
+{{< rawhtml >}}
+<video controls playsinline preload="metadata" width="1280" aria-label="Wireshark live capture of Zenoh packets">
+  <source src="../../img/20230117-blog-zenoh-wireshark/live-capture.mp4" type="video/mp4">
+  <a href="../../img/20230117-blog-zenoh-wireshark/live-capture.mp4">Wireshark live capture video</a>
+</video>
+{{< /rawhtml >}}
 
 You can see which packets are being issued and sent into the network, while being able to inspect some of their internal fields.
 

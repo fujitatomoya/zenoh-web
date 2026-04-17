@@ -8,5 +8,5 @@ menu:
 
 {{< rawhtml >}}
 The Kotlin API documentation is available on
-<a href="https://eclipse-zenoh.github.io/zenoh-kotlin" target="_blank">https://eclipse-zenoh.github.io/zenoh-kotlin</a>.
+<a href="https://eclipse-zenoh.github.io/zenoh-kotlin" target="_blank" rel="noopener noreferrer">https://eclipse-zenoh.github.io/zenoh-kotlin</a>.
 {{< /rawhtml >}}

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "hugo && npx pagefind --site public",
+    "build": "hugo --cleanDestinationDir && npx pagefind --site public",
+    "check:dist": "node scripts/check-dist.mjs",
     "dev": "hugo server"
   },
   "devDependencies": {

@@ -63,11 +63,11 @@ Software deployment:
 The application deployed in the robots constantly monitors the currently associated WiFi access point. Each time the WiFi access point changes, the robot application reconnects to the closest zenoh router (details discussed below).
 
 {{< rawhtml >}}
-<video controls width="720">
-    <source src="../../img/blog-zenoh-mobility/zenoh_mobility_trim_1080p_low_x2.mp4"
+<video controls playsinline preload="metadata" width="720">
+    <source src="../../img/blog-zenoh-mobility/zenoh_mobility_trim_720p.mp4"
             type="video/mp4">
 
-    <a href="../../img/blog-zenoh-mobility/zenoh_mobility_trim_1080p_low_x2.mp4">zenoh_mobility_trim_1080p_low_x2.mp4</a>
+    <a href="../../img/blog-zenoh-mobility/zenoh_mobility_trim_720p.mp4">Zenoh mobility demo video</a>
 </video>
 {{< /rawhtml >}}
 

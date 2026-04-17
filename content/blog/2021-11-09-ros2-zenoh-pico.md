@@ -41,7 +41,12 @@ Wouldn’t it be cool and fun to have the power in your hand? How many of you ha
 
 Here is a short video of our Zenoh-powered Immersive Controller prototype being used to control the turtlebot.
 
-![msg-sec](../../img/blog-ros2-zenoh-pico/turtlebot-real-demo.gif)
+{{< rawhtml >}}
+<video controls playsinline preload="metadata" width="320" aria-label="Zenoh-powered immersive controller controlling a Turtlebot">
+  <source src="../../img/blog-ros2-zenoh-pico/turtlebot-real-demo.mp4" type="video/mp4">
+  <a href="../../img/blog-ros2-zenoh-pico/turtlebot-real-demo.mp4">Turtlebot controller demo video</a>
+</video>
+{{< /rawhtml >}}
 
 ---
 # Show me how to do it myself
@@ -212,4 +217,3 @@ Tell us about your ideas on how to unlock the power of microcontrollers. We will
 [**--CG**](https://github.com/cguimaraes/)
 [**--GB**](https://github.com/gabrik/)
 [**--JE**](https://github.com/JEnoch/)
-

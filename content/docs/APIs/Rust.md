@@ -8,5 +8,5 @@ menu:
 
 {{< rawhtml >}}
 The Rust API documentation is available on 
-<a href="https://docs.rs/zenoh/latest/zenoh/" target="_blank">docs.rs</a>.
+<a href="https://docs.rs/zenoh/latest/zenoh/" target="_blank" rel="noopener noreferrer">docs.rs</a>.
 {{< /rawhtml >}}
