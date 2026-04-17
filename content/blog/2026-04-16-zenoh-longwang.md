@@ -3,15 +3,15 @@ title: "Zenoh 1.9.x: Longwang"
 date: 2026-04-17
 menu: "blog"
 weight: 20260416
-description: "16th April, 2026 -- Paris."
+description: "17th April, 2026 -- Paris."
 draft: false
 ---
 
-We are excited to announce the release of Zenoh 1.9.x **Longwang**!
+Zenoh 1.9.x **Longwang** has landed!
 
-Named after the Dragon Kings of Chinese mythology who rule over the seas and control water and weather, Longwang represents this release's ability to command and orchestrate increasingly complex network topologies. Just as the four Dragon Kings each govern their domain while working in harmony, Zenoh 1.9.x brings the power to structure and manage distributed systems with unprecedented flexibility.
+Named after the Dragon Kings of Chinese mythology who rule over the seas and control water and weather, Longwang represents this release's ability to support increasingly complex network topologies. Just as the four Dragon Kings each govern their domain while working in harmony, Zenoh 1.9.x brings the power to craft distributed systems with unprecedented flexibility.
 
-This release introduces transformative capabilities for network architecture. The headline feature is **Regions** — a complete reimagining of Zenoh's topology model that breaks free from the traditional three-layer router/peer/client hierarchy. Now you can design arbitrarily deep network trees, configure custom gateway relationships, and scale your deployments beyond the inherent limits of any single topology type. This architectural evolution enables everything from edge robotics deployments that connect hubs as clients instead of routers, to massive-scale systems that span multiple subregions at each level.
+This release introduces transformative capabilities for network architecture. The headline feature is **Regions** — a complete reimagining of Zenoh's topology model that breaks free from the traditional three-layer router/peer/client hierarchy. Now you can design arbitrarily deep network structures, configure custom gateway relationships, and scale your deployments beyond the inherent limits of any single kind of topology. This architectural evolution enables everything from edge robotics deployments that connect hubs as clients instead of routers, to massive-scale systems that span multiple subregions at each level.
 
 Beyond regions, we've significantly enhanced QUIC transport with stream multiplexing and mixed reliability support, introduced a new official Go language binding, evolved Zenoh-Pico's threading model for better resource efficiency and significantly improved single-threaded mode capabilities, and released Nuze 0.3.0 with native Zenoh message decoding.
 
@@ -30,20 +30,20 @@ Let's dive into the details!
 ## Regions
 
 Zenoh as a routing protocol weaves together multiple topology types within the same network:
-peer-to-peer (clique), link-state (mesh), and brokered (star). Pre-regions Zenoh nodes route messages
-between routers, peers, and clients using link-state, peer-to-peer, and brokered networks,
-respectively. The different network topologies are organized in a tree hierarchy in order to avoid
+peer-to-peer (clique), link-state (mesh), and brokered (star). Before the introduction of regions 
+Zenoh nodes routed messages between routers, peers, and clients using link-state, peer-to-peer, and 
+brokered networks, respectively. The different network topologies are organized in a tree hierarchy in order to avoid
 loops and support the interest protocol.
 
-Pre-regions Zenoh supported a limited set of network topology hierarchies: a brokered network is
+Pre-regions Zenoh supported a limited depth of network topology hierarchies: a brokered network is
 always a child of a peer-to-peer network or a link-state network and a peer-to-peer network is
 always a child of a link-state network. This scheme defines a bound relation between nodes. Routers
 are north-bound w.r.t. peers and clients; clients are south-bound w.r.t. peers and routers, etc.
 
 ![Pre-regions](../../img/2026-04-16-zenoh-longwang/pre-regions.png)
 
-Post-regions Zenoh on the other hand does away with the traditional three-layer router/peer/client
-hierarchies. Instead, network topology hierarchies may now span an arbitrary number of layers. Zenoh
+With regions, Zenoh goes beyond the traditional three-layer router/peer/client
+hierarchies. Now, network topology hierarchies can span across an arbitrary number of layers. Zenoh
 1.9 however ships with a limitation on bound relations: routers may only sit south of other routers,
 which is enforced at establishment time (i.e., Zenoh's "handshake"). Beyond this constraint, you have
 complete freedom in designing your region tree architecture.
