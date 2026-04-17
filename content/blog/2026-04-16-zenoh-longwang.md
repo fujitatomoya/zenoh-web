@@ -1,10 +1,10 @@
 ---
 title: "Zenoh 1.9.x: Longwang"
-date: 2026-04-16
+date: 2026-04-17
 menu: "blog"
 weight: 20260416
 description: "16th April, 2026 -- Paris."
-draft: true
+draft: false
 ---
 
 We are excited to announce the release of Zenoh 1.9.x **Longwang**!
@@ -337,4 +337,3 @@ You can reach us on [Zenoh's Discord server](https://discord.com/invite/vSDSpqnb
 Like the Dragon Kings orchestrating the waters with wisdom and power, may your systems flow harmoniously across any topology,
 
 **– The Zenoh Team**
-
